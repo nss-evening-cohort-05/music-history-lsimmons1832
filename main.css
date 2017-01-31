@@ -1,0 +1,22 @@
+.head {
+	background-color: pink;
+	border: 2px solid black;
+	margin: 10px;
+	padding: 25px;
+}
+
+.head a{
+	padding: 5px;
+	margin: 2px;
+}
+
+.left {
+	float: left;
+	border: 2px solid black;
+	margin: 10px;
+}
+.right {
+	float: left;
+	border: 2px solid black;
+	margin: 10px;
+}
