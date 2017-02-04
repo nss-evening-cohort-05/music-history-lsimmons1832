@@ -10,10 +10,13 @@ body {
 	margin: 5px;
 }
 
+.container {
+	display: flex;
+}
 .left-screen {
 	background-color:  #4DD7FA;
 	border: 2px solid black;
-	float: left;
+	/*float: left;*/
 	/*overflow: auto;*/
 	width: 25%;
 	padding: 3px 0 0 2px;
@@ -28,14 +31,14 @@ body {
 	background-color: #FEFAC0;
 	color: #785616;
 	border: 2px solid black;
-	float: right;
+	/*float: right;*/
 	width: 70%;
 	padding: 3px 0 6px 2px;
 	margin: 5px;
 }
 .right-screen > * {
-	padding: 2px ;
-}
+	padding: 2px;
+} /*Research flex box */
 
 div button {
 	margin: 7px auto;
