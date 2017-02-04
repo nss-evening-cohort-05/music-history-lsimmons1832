@@ -15,8 +15,13 @@ body {
 	border: 2px solid black;
 	float: left;
 	/*overflow: auto;*/
-	width: 15%;
-	padding: 5px;
+	width: 25%;
+	padding: 3px 0 0 2px;
+	margin: 5px;
+}
+
+.left-screen > * {
+	padding: 4px;
 }
 
 .right-screen {
@@ -24,9 +29,43 @@ body {
 	color: #785616;
 	border: 2px solid black;
 	float: right;
-	width: 60%;
-	padding: 5px 0 5px 0;
+	width: 70%;
+	padding: 3px 0 6px 2px;
+	margin: 5px;
 }
+.right-screen > * {
+	padding: 2px ;
+}
+
+div button {
+	margin: 7px auto;
+	width: 20%;
+	display: block;
+}
+
+legend {
+	font-weight: bold;
+}
+.column1 {
+	float: left;
+	border: 0;
+	padding: 4px;
+}
+
+.column1 label {
+	padding: 5px;
+}
+
+.column2 {
+	border: 0;
+	/*float: right;*/
+	padding: 4px;
+}
+
+.column2 label {
+	padding: 3px;
+}
+
 .button {
-	align-items: center;
+	padding: 5px;
 }
