@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music History</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<!-- The links in the navigation bar don't need to link to anything just yet, you can use <a href="#">View music</a> for now -->
+	<div class="header">
+		<a>View History |</a>
+		<a href="#">Add Music</a> |
+		<a href="#">Profile</a>
+	</div>
+	<!-- Create five options for the artist select element of any artist that you enjoy. -->
+	<div class="container">
+		<div class="left-screen">
+				<h4>Song Length:</h4>
+					<audio controls>
+						<source src="" type="audio/mp3">
+					</audio>
+				<h4>Artist:</h4>
+					<select name="Artist:">
+						<option value="artist1">Casey J</option>
+						<option value="artist2">Tasha Cobb</option>
+						<option value="artist3">Torrence Greene</option>
+						<option value="artist4">James Fortune</option>
+						<option value="artist5">Anthony Evans</option>
+					</select>
+				<!-- Create at least five options for the album select element. One, or more, album for each artist. -->
+				<h4>Album:</h4>
+					<select>
+						<option value="album">The Truth</option>
+						<option value="album">Grace</option>
+						<option value="album">One Place</option>
+						<option value="album">I Can Do Anything</option>
+						<option value="album">Identity</option>
+						<option value="album">I Believe</option>
+						<option value="album">Real Life/Real Worship</option>
+					</select>
+						<legend>Genre:</legend>
+						<fieldset class="column1">
+								<input type="checkbox" id="rock" name="Rock">
+								<label for="rock">Rock</label><br>
+								<input type="checkbox" id="Pop" name="Pop">
+								<label for="Pop">Pop</label><br>
+								<input type="checkbox" id="Blues" name="Blues">
+								<label for="Blues">Blues</label><br>
+							</fieldset>
+							<fieldset class="column2">
+								<input type="checkbox" id="Classical" name="Classical">
+								<label for="Classical">Classical</label><br>
+								<input type="checkbox" id="Jazz" name="Jazz">
+								<label for="Jazz">Jazz</label><br>
+								<input type="checkbox" id="hiphop" name="Hip Hop">
+								<label for="hiphop">Hip Hop</label><br>
+							</fieldset><br><br><br><br>
+						<button class="button" type="button">Filter</button>
+			</div>
+			<div class="right-screen">
+				<h1>Fill Me Up</h1>
+					<p>Casey J | Truth | Gospel</p>
+				<h1>Confidence</h1>
+					<p>Tasha Cobb | Grace | Gospel</p>
+				<h1>He Knows My Name</h1>
+					<p>Torrence Greene | I Can Do Anything | Gospel</p>
+				<h1>I Believe</h1>
+					<p>James Fortune | I Believe | Gospel</p>
+			</div>
+		<!-- </div> -->
+	</div>
+	<script type="text/javascript" src="songs.js"></script>
+</body>
+</html>
