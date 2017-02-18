@@ -1,74 +1,60 @@
-body {
-	margin: 50px;
-}
-
 .header {
 	background-color: #FFB4B0;
 	border: 2px solid black;
-	padding: 8px;
-	height: 40px;
-	margin: 5px;
+	margin: 0 auto;
+	width: 80%;
+	padding: 30px 0;
+	font-size: 20px;
 }
 
 .container {
 	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	width: 80%;
+	padding: 3px;
 }
+
 .left-screen {
 	background-color:  #4DD7FA;
 	border: 2px solid black;
-	/*float: left;*/
-	/*overflow: auto;*/
-	width: 25%;
-	padding: 3px 0 0 2px;
-	margin: 5px;
+	flex 1;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 20px;
 }
 
-.left-screen > * {
-	padding: 4px;
-}
 
 .right-screen {
 	background-color: #FEFAC0;
 	color: #785616;
 	border: 2px solid black;
-	/*float: right;*/
-	width: 70%;
-	padding: 3px 0 6px 2px;
-	margin: 5px;
+	flex: 3;
+	margin-left: 3px;
+	padding-left: 10px;
 }
-.right-screen > * {
-	padding: 2px;
-} /*Research flex box */
 
-div button {
-	margin: 7px auto;
-	width: 20%;
-	display: block;
-}
+
 
 legend {
 	font-weight: bold;
+	font-size: 20px;
 }
-.column1 {
+
+.column1,
+.column2 {
 	float: left;
 	border: 0;
-	padding: 4px;
+	padding: 2px;
+	font-size: 20px;
 }
 
-.column1 label {
-	padding: 5px;
+div button {
+	display: flex;
+	width: 20%;
+	padding: 8px;
 }
 
-.column2 {
-	border: 0;
-	/*float: right;*/
-	padding: 4px;
-}
-
-.column2 label {
-	padding: 3px;
-}
-
-.button {
-	padding: 5px;
-}
+/*.button {
+	padding: 10px;
+}*/

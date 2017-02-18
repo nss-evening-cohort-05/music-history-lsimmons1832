@@ -8,6 +8,10 @@ songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little
 
 //Each student must add one song to the beginning.
 
+// for (var i = 0; i < songs.length; i++) {
+// 	songs.push('I Need You More');
+// }
+console.log(songs);
 //Each student must add one song to the end of the array.
 
 //Loop over the array and remove any words or characters that obviously don't belong.
