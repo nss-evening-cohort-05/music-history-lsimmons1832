@@ -49,11 +49,29 @@ legend {
 	font-size: 20px;
 }
 
-div button {
+.button {
 	display: flex;
 	width: 20%;
 	padding: 8px;
 }
+
+.wrapper{
+  position:  absolute;
+  top : 200px;
+  left: 300px;
+  width: 300px;
+  height:300px;
+}
+
+.list{
+	 position: relative;
+	 display: block;
+	 margin : 0 auto;
+	}
+
+	label{
+		font: 20px bold Tahoma;
+	}
 
 /*.button {
 	padding: 10px;
