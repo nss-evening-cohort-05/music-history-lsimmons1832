@@ -32,12 +32,12 @@ function buildDOM() {
 var newSongElement = document.getElementById("songs");
 
 var list = newSongElement.innerHTML;
-list += "<ul>";
+list += "<div>";
 for (var i = 0; i < newSong.length; i++) {
-		list += "<li>" + newSong[i] +"</li>";
+		list += "<p>" + newSong[i] +"</p>";
 	
 	}
-list += "</ul>";
+list += "</div>";
 newSongElement.innerHTML = list;
 }
 buildDOM();
