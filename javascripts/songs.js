@@ -45,27 +45,29 @@ var musicHolder = document.getElementsByClassName('right-screen');
 var musicString = "";
 var music;
 
-function makeDOM(xhrData){
+function writeToDOM(xhrData){
 	for (var i = 0; i < xhrData.music.length; i++) {
 		console.log("I'm here");
 		music = xhrData.music[i];
-		musicString += `<div><h1>${music[i].Song}`;
-		musicString += `<p>${music[i].Artist} | ${music[i].Albumn} | ${music[i].Genre}</p></div>`;
+		musicString += `<div><h1> ${music.Song} </h1>`;
+		musicString += `<p>${music.Artist} | ${music.Albumn} | ${music.Genre}</p></div>`;
 	}
 	musicHolder.innerHTML = musicString;
 }
 
+var myRequest = new XMLHttpRequest();
 function loadFile(){
+	console.log("Im in my load");
 	var data = JSON.parse(this.responseText);
-	makeDOM(data);
+	console.log(data);
+	// writeToDOM(data);
 }
 
 function loadFailed(){
 	alert("Sorry, There is a problem loading the file");
 }
 
-var myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", loadFile);
 myRequest.addEventListener("error", loadFailed);
-myRequest.open("GET", music.json);
+myRequest.open("GET","music.json");
 myRequest.send();
