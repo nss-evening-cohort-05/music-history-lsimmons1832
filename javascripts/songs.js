@@ -47,11 +47,12 @@ var music;
 
 function makeDOM(xhrData){
 	for (var i = 0; i < xhrData.music.length; i++) {
+		console.log("I'm here");
 		music = xhrData.music[i];
-		musicString += `<div><h1>${music.Song}`;
-		musicString += `<p>${music.Artist} | ${music.Albumn} | ${music.Genre}</p></div>`
+		musicString += `<div><h1>${music[i].Song}`;
+		musicString += `<p>${music[i].Artist} | ${music[i].Albumn} | ${music[i].Genre}</p></div>`;
 	}
-	musicHolder.innerHTML += musicString;
+	musicHolder.innerHTML = musicString;
 }
 
 function loadFile(){
