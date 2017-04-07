@@ -49,11 +49,28 @@ function writeToDOM(data){
 		console.log("I'm here");
 		var currentSong = data.songs[i];
 		 console.log(currentSong.Song);
-		 musicString += `<section><h1> ${data.songs[i].Song} </h1>`;
-		 musicString += `<p>${data.songs[i].Artist} </p> | <p> ${data.songs[i].Albumn} </p> | <p> ${data.songs[i].Genre}</p></section>`;
+		 musicString += `<div><h1> ${data.songs[i].Song} </h1>`;
+		 musicString += `<p>${data.songs[i].Artist} </p> | <p> ${data.songs[i].Albumn} </p> | <p> ${data.songs[i].Genre}</p>`;
+		 musicString += `	<button name="delete" id="delBtn">DELETE</button></div>`;
 	}
 	musicHolder.innerHTML += musicString;
 }
+
+
+//getTarget(event){
+//	let e = event || window.event;
+//	let target = e.srcElement.id //or .className for class
+//	
+//	if (target === 'delBtn') { //your id
+//		target.parentNode.remove();
+//	}
+//}
+
+document.body.addEventListener("click", function(event){
+	if (event.target.className === "delete") {
+  	event.target.parentNode.remove();
+		}
+});
 
 function loadFile(){
 	var data = JSON.parse(this.responseText);
