@@ -41,24 +41,22 @@
 // newSongElement.innerHTML = list;
 // }
 // buildDOM();
-var musicHolder = document.getElementsByClassName('right-screen');
+var musicHolder = document.getElementById('songs');
 var musicString = "";
-var music;
 
 function writeToDOM(data){
 	for (var i = 0; i < data.songs.length; i++) {
 		console.log("I'm here");
-		music = data.songs[i];
-		musicString += `<div><h1> ${songs.Song} </h1>`;
-		musicString += `<p>${songs.Artist} | ${songs.Albumn} | ${songs.Genre}</p></div>`;
+		var currentSong = data.songs[i];
+		 console.log(currentSong.Song);
+		 musicString += `<section><h1> ${data.songs[i].Song} </h1>`;
+		 musicString += `<p>${data.songs[i].Artist} </p> | <p> ${data.songs[i].Albumn} </p> | <p> ${data.songs[i].Genre}</p></section>`;
 	}
-	musicHolder.innerHTML = musicString;
+	musicHolder.innerHTML += musicString;
 }
 
 function loadFile(){
-	console.log(data);
 	var data = JSON.parse(this.responseText);
-	console.log(data);
 	writeToDOM(data);
 }
 
@@ -69,5 +67,5 @@ function loadFailed(){
 var myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", loadFile);
 myRequest.addEventListener("error", loadFailed);
-myRequest.open("GET", "music.json");
+myRequest.open("GET", "javascripts/music.json");
 myRequest.send();
