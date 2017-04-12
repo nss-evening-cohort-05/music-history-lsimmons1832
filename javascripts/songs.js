@@ -50,10 +50,27 @@ function writeToDOM(data){
 		var currentSong = data.songs[i];
 		 console.log(currentSong.Song);
 		 musicString += `<section><h1> ${data.songs[i].Song} </h1>`;
-		 musicString += `<p>${data.songs[i].Artist} </p> | <p> ${data.songs[i].Albumn} </p> | <p> ${data.songs[i].Genre}</p></section>`;
+		 musicString += `<p>${data.songs[i].Artist}  |  ${data.songs[i].Albumn}  |  ${data.songs[i].Genre}</p></section>`;
 	}
 	musicHolder.innerHTML += musicString;
+	pageLoaded();
 }
+
+function pageLoaded(){
+	musicHolder.innerHTML += `<a id="more" href="#">More...</a>`;
+	var moreBtn = document.getElementById('more');
+
+	moreBtn.addEventListener("click", function(event){
+		musicHolder.innerHTML = "";
+		var secondRequest = new XMLHttpRequest();
+		secondRequest.addEventListener("load", loadSecondFile);
+		secondRequest.addEventListener("error", loadSecondFileFailed);
+		secondRequest.open("GET", "./db/music2.json");
+		secondRequest.send();
+	});
+}
+
+
 
 function loadFile(){
 	var data = JSON.parse(this.responseText);
@@ -67,5 +84,17 @@ function loadFailed(){
 var myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", loadFile);
 myRequest.addEventListener("error", loadFailed);
-myRequest.open("GET", "javascripts/music.json");
+myRequest.open("GET", "./db/music.json");
 myRequest.send();
+
+function loadSecondFile(){
+	var data2 = JSON.parse(this.responseText);
+	writeToDOM(data2);
+	var moreBtn = document.getElementById('more');
+	moreBtn.disabled();
+}
+
+function loadSecondFileFailed(){
+	alert("Sorry, There is a problem loading the file");
+}
+
