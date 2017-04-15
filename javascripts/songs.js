@@ -57,12 +57,8 @@ function writeToDOM(data){
 	pageLoaded();
 }
 
-function pageLoaded(){
-	musicHolder.innerHTML += `<a id="more" href="#">More...</a>`;
-	var moreBtn = document.getElementById('more');
+	window.addEventListener("click", function(event){
 	var delBtn = document.getElementById('delBtn');
-
-	delBtn.addEventListener("click", function(event){
 		console.log(event.target.parentNode);
 		console.log("I clicked delete");
 		if (event.target.id === "delBtn") {
@@ -70,6 +66,11 @@ function pageLoaded(){
 			}
 	});
 	
+function pageLoaded(){
+	musicHolder.innerHTML += `<a id="more" href="#">More...</a>`;
+	var moreBtn = document.getElementById('more');
+
+
 	moreBtn.addEventListener("click", function(event){
 		musicHolder.innerHTML = "";
 		var secondRequest = new XMLHttpRequest();
