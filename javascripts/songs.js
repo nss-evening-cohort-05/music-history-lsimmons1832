@@ -49,9 +49,9 @@ function writeToDOM(data){
 		console.log("I'm here");
 		var currentSong = data.songs[i];
 		 console.log(currentSong.Song);
-		 musicString += `<section><h1> ${data.songs[i].Song} </h1>`;
-		 musicString += `<p>${data.songs[i].Artist}  |  ${data.songs[i].Albumn}  |  ${data.songs[i].Genre} <button name="delete" id="delBtn">DELETE</button></p></section>`;
-		 musicString += `	</div>`;
+		 musicString += `<div><h1> ${data.songs[i].Song} </h1>`;
+		 musicString += `<p>${data.songs[i].Artist}  |  ${data.songs[i].Albumn}  |  ${data.songs[i].Genre}</p>  <button name="delete" class="delete" id="delBtn">DELETE</button>`;
+		 musicString += `</div>`;
 	}
 	musicHolder.innerHTML += musicString;
 	pageLoaded();
@@ -60,7 +60,16 @@ function writeToDOM(data){
 function pageLoaded(){
 	musicHolder.innerHTML += `<a id="more" href="#">More...</a>`;
 	var moreBtn = document.getElementById('more');
+	var delBtn = document.getElementById('delBtn');
 
+	delBtn.addEventListener("click", function(event){
+		console.log(event.target.parentNode);
+		console.log("I clicked delete");
+		if (event.target.id === "delBtn") {
+	  	event.target.parentNode.remove();
+			}
+	});
+	
 	moreBtn.addEventListener("click", function(event){
 		musicHolder.innerHTML = "";
 		var secondRequest = new XMLHttpRequest();
@@ -70,11 +79,6 @@ function pageLoaded(){
 		secondRequest.send();
 	});
 
-	delBtn.addEventListener("click", function(event){
-		if (event.target.id === "delBtn") {
-	  	event.target.parentNode.remove();
-			}
-	});
 }
 
 
