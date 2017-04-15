@@ -50,7 +50,8 @@ function writeToDOM(data){
 		var currentSong = data.songs[i];
 		 console.log(currentSong.Song);
 		 musicString += `<section><h1> ${data.songs[i].Song} </h1>`;
-		 musicString += `<p>${data.songs[i].Artist}  |  ${data.songs[i].Albumn}  |  ${data.songs[i].Genre}</p></section>`;
+		 musicString += `<p>${data.songs[i].Artist}  |  ${data.songs[i].Albumn}  |  ${data.songs[i].Genre} <button name="delete" id="delBtn">DELETE</button></p></section>`;
+		 musicString += `	</div>`;
 	}
 	musicHolder.innerHTML += musicString;
 	pageLoaded();
@@ -68,8 +69,24 @@ function pageLoaded(){
 		secondRequest.open("GET", "./db/music2.json");
 		secondRequest.send();
 	});
+
+	delBtn.addEventListener("click", function(event){
+		if (event.target.id === "delBtn") {
+	  	event.target.parentNode.remove();
+			}
+	});
 }
 
+
+
+//getTarget(event){
+//	let e = event || window.event;
+//	let target = e.srcElement.id //or .className for class
+//	
+//	if (target === 'delBtn') { //your id
+//		target.parentNode.remove();
+//	}
+//}
 
 
 function loadFile(){

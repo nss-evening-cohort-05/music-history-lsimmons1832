@@ -34,7 +34,9 @@
 	padding-left: 10px;
 }
 
-
+p{
+	display: inline-block;
+}
 
 legend {
 	font-weight: bold;
